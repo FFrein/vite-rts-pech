@@ -1,38 +1,78 @@
+Вот улучшенная версия вашего README-файла с более красивым и структурированным оформлением:
+
+```markdown
 # React + TypeScript + Vite
 
-## Install Prettier
+## 🚀 Установка Prettier
 
-https://prettier.io/docs/en/install.html
+[Документация Prettier](https://prettier.io/docs/en/install.html)
 
-First, install Prettier locally:
-yarn add --dev --exact prettier
+1. Сначала установите Prettier локально:
+   ```bash
+   yarn add --dev --exact prettier
+   ```
 
-Then, create an empty config file to let editors and other tools know you are using Prettier:
+2. Затем создайте пустой конфигурационный файл, чтобы дать понять редакторам и другим инструментам, что вы используете Prettier:
+   ```bash
+   node --eval "fs.writeFileSync('.prettierrc','{}\n')"
+   ```
 
-node --eval "fs.writeFileSync('.prettierrc','{}\n')"
+3. Создайте файл `.prettierignore`, чтобы указать CLI Prettier и редакторам, какие файлы не следует форматировать. Пример:
+   ```bash
+   node --eval "fs.writeFileSync('.prettierignore','# Ignore artifacts:\nbuild\ncoverage\n')"
+   ```
 
-Next, create a .prettierignore file to let the Prettier CLI and editors know which files to not format. Here’s an example:
+4. Теперь отформатируйте все файлы с помощью Prettier:
+   ```bash
+   yarn prettier . --write
+   ```
 
-node --eval "fs.writeFileSync('.prettierignore','# Ignore artifacts:\nbuild\ncoverage\n')"
+5. Для проверки форматирования выполните:
+   ```bash
+   npx prettier . --check
+   ```
 
-Now, format all files with Prettier:
+---
 
-yarn prettier . --write
+## 🧪 ESLint (и другие линтеры)
 
-npx prettier . --check
+[Инструкция по установке ESLint](https://github.com/prettier/eslint-config-prettier#installation)
 
-## ESLint (and other linters)
+---
 
-https://github.com/prettier/eslint-config-prettier#installation
+## 🪝 Git хуки
 
-## Git hooks
+1. Установите Husky и lint-staged:
+   ```bash
+   yarn add --dev husky lint-staged
+   ```
 
-Install husky and lint-staged:
+2. Инициализируйте Husky:
+   ```bash
+   npx husky init
+   ```
 
-yarn add --dev husky lint-staged
-npx husky init
-node --eval "fs.writeFileSync('.husky/pre-commit','npx lint-staged\n')"
+3. Добавьте хук pre-commit:
+   ```bash
+   node --eval "fs.writeFileSync('.husky/pre-commit','npx lint-staged\n')"
+   ```
 
-Add the following to your package.json:
+4. Добавьте следующее в ваш `package.json`:
+   ```json
+   {
+     "husky": {
+       "hooks": {
+         "pre-commit": "lint-staged"
+       }
+     }
+   }
+   ```
 
-Note: If you use ESLint, make sure lint-staged runs it before Prettier, not after.
+5. Установите Husky:
+   ```bash
+   npx husky install
+   ```
+
+> **Примечание:** Если вы видите сообщение "installation deprecated", это нормально.
+
+---
