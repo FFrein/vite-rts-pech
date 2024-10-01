@@ -3,9 +3,11 @@
 # React + TypeScript + Vite
 
 0. Создать проект
+ 
    ```bash
    yarn create vite Name --template react-ts
    ```
+   
 ## 🚀 Установка Prettier
 
 [Документация Prettier](https://prettier.io/docs/en/install.html)
