@@ -37,8 +37,9 @@
 
 [Инструкция по установке ESLint](https://github.com/prettier/eslint-config-prettier#installation)
 
----
+**Примечание:** есть в template react-ts из коробки
 
+---
 ## ⛰️ Git хуки
 
 1. Установите Husky и lint-staged:
