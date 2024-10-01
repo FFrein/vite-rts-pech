@@ -39,7 +39,7 @@
 
 ---
 
-## 🪝 Git хуки
+## ⛰️ Git хуки
 
 1. Установите Husky и lint-staged:
    ```bash
@@ -74,4 +74,13 @@
 
 > **Примечание:** Если вы видите сообщение "installation deprecated", это нормально.
 
+6. Добавте в package.json lint-staged
+    ```bash
+   "lint-staged": {
+       "**/*": [
+         "eslint --fix",
+         "prettier --write --ignore-unknown"
+       ]
+     },
+    ```
 ---
